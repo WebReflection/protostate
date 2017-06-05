@@ -50,5 +50,5 @@ tressa.assert(
 state = State({one:1});
 tressa.assert(State.prev(state) === null, 'State.prev(firstState)');
 tressa.assert(
-  Object.keys(State.next(state, {two:2})).join('') === 'two' && state.two === 2 && state.one === 1
+  Object.keys(State.next(state, {two:2})).sort().join(',') === 'two'
 );
