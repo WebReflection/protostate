@@ -4,7 +4,13 @@ function State(setup) {'use strict';
 }
 
 State.diff = function diff(prev, curr) {
-  var map = {}, keys, i;
+  var map = {}, tmp, keys, i;
+  // accepts states as both prev, curr and curr, prev
+  if (map.isPrototypeOf.call(curr, prev)) {
+    tmp = curr;
+    curr = prev;
+    prev = tmp;
+  }
   while (curr !== prev) {
     for (
       keys = Object.keys(curr),

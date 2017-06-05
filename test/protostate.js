@@ -38,6 +38,11 @@ tressa.assert(
 );
 
 tressa.assert(
+  State.diff(five, two).sort().join(',') === 'five,four,three',
+  'State.diff(curr, prev)'
+);
+
+tressa.assert(
   State.size(state) === 4,
   'State.size(state)'
 );
